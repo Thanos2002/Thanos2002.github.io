@@ -37,4 +37,32 @@ body {
     background: #333;
     color: white;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  section {
+    padding: 100px 0;
+  }
+  body {
+    padding-top: 56px; /* Adjust if you use fixed navbar */
+  }
+
+  .nav-pills .nav-link {
+    background-color: #f8f9fa;
+    color: #333;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #678170 !important; /* Bootstrap's primary */
+    color: white;
+  }
+
+  .nav-pills .nav-link:hover {
+    background-color: #678170 ;
+    color: #383f3b;
+  }
+  
   
