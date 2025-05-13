@@ -101,7 +101,19 @@ section {
     box-shadow: 0 6px 12px #c4c3c3;
 
   }
-
+.card {
+  background: rgba(255, 255, 255, 0.4); 
+  backdrop-filter: blur(10px); 
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px #c7c6c6;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px #a3a3a5;
+  transition: transform .3s, box-shadow .1s;
+  
+}
 
 /* Buttons */
 .btn {
@@ -119,10 +131,19 @@ section {
   color: rgb(255, 255, 255);
   background-color: #a9bcd1;
 }
+
+
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+}
+
+#skills .col-md-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: transform .3s, box-shadow .1s;
+  
 }
 
 
