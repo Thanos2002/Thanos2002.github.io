@@ -1,54 +1,86 @@
+/* style.css */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    scroll-behavior: smooth;
-  }
-  
-  .navbar {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-  }
-  
-  .navbar a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-  }
-  
-  section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
-  }
+  background-color: #a5b8ab;
+  margin: 0;
+  font-size: 1.1rem;
+  padding-left: 15rem;
+  font-family: 'Inter', sans-serif;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
-  section {
-    padding: 100px 0;
-  }
-  body {
-    padding-top: 56px; /* Adjust if you use fixed navbar */
-  }
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Behind content */
+  opacity: 0.5; /* Adjust transparency */
+  pointer-events: none; /* Allow clicks through */
+}
 
-  .nav-pills .nav-link {
+h1, h2, h3, nav a {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar */
+nav {
+  position: fixed;
+  top: 0; bottom: 0; left: 0;
+  padding: 15rem 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+/* Hover state */
+.nav-list a:hover {
+  background: #678170;  /* match your btn hover */
+  transform: translateY(-2px);
+  transition: transform .1s, box-shadow .1s;
+  color: #fff;
+}
+
+.nav-list a {
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background 0.2s, color 0.2s;  /* smooth hover */
+}
+
+
+/* Sections */
+section {
+  padding: 5rem 0;
+  scroll-margin-top: 100px;
+}
+.section-light { 
+  background: rgba(255, 255, 255, 0.5); /* 85% opaque white */
+  backdrop-filter: blur(1px); /* Optional: subtle blur for depth */
+}
+
+.section-green {
+  background: rgba(150, 173, 158, 0.85); /* 85% opaque green */
+}
+
+/* Profile Image */
+.profile-img {
+  max-width: 400px;
+  width: 80%;
+}
+
+/* Status Dot */
+.status-indicator {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+
+ .nav-pills .nav-link {
     background-color: #f8f9fa;
     color: #333;
     margin-bottom: 10px;
@@ -56,13 +88,75 @@ body {
   }
 
   .nav-pills .nav-link.active {
-    background-color: #678170 !important; /* Bootstrap's primary */
+    background-color: #678170 !important;
+    box-shadow: 0 6px 12px #c4c3c3;
     color: white;
   }
 
   .nav-pills .nav-link:hover {
     background-color: #678170 ;
-    color: #383f3b;
+    color: #ffffff;
+    transform: translateY(-1px);
+    transition: transform .3s;
+    box-shadow: 0 6px 12px #c4c3c3;
+
   }
+
+
+/* Buttons */
+.btn {
+  background: #73889c;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px #c7c6c6;
+  transition: transform .3s, box-shadow .3s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px #838385;
+  color: rgb(255, 255, 255);
+  background-color: #a9bcd1;
+}
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+
+
+/* PHONE: completely hide sidebar until toggled */
+@media (max-width: 768px) {
+  /* Hide the sidebar by default */
+  #sidebarMenu {
+    display: none;
+  }
+
+  /* Show the toggle button */
+  .sidebar-toggle {
+    display: block;
+  }
+
+  /* When it has .open, make it a fixed drawer */
+  #sidebarMenu.open {
+    display: block;
+  }
+
+  /* Remove body padding on mobile */
+  body {
+    margin:auto;
+    padding-left: 0;
+    font-size: 1.2rem;
+  }
+  .profile-img {
+  max-width: 400px;
+  width: 70%;
+}
+ 
+}
+
+
   
-  
+
